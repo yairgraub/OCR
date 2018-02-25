@@ -1,2 +1,2 @@
 # OCR
-Reading Hebrew text fro pictures
+Reading Hebrew text from pictures
