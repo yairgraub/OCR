@@ -1,19 +1,12 @@
-#import numpy as np
 import cv2
 import numpy as np
 import pandas as pd
-#from sklearn.datasets import load_breast_cancer
 import msvcrt
 import keyboard
 import sklearn
 
 # Load an color image in grayscale
 img = cv2.imread('test.jpg',0)
-#imS = cv2.resize(img, (960, 540))                       # Resize image
-#cv2.imshow("output", imS)                              # Show image
-#cv2.waitKey(0)                                         # Display the image infinitely until any keypress
-#import numpy.lib.stride_tricks.as_strided
-
 A = img
 
 def test():
@@ -44,9 +37,8 @@ def Hastext(A):
               'enter':1,
               '-':2,
               '+':3}
-
+    
     Action=swithcher.get(key.name,0)
-
     saveforNN(A,action,'Hastext.txt')
        
     return Action
@@ -57,7 +49,6 @@ def Identifychar(A):
     cv2.waitKey(0)
     key = keyboard.read_key()
     print(key.name)
-
     saveforNN(A,key.name,'Identifychar.txt')
 
     return key.name
@@ -74,10 +65,6 @@ def charpos(window):
         all_chars.append([c,j]) 
 
     return all_chars            
-
-#xsize=int(A.shape[0]/100)
-#ysize=int(A.shape[1]/2)
-
 
 def textwindows(A,height):
 
@@ -161,10 +148,4 @@ def showwindow(window):
       
 
 
-#print(A)
-#as_strided=np.lib.stride_tricks.as_strided
-#all_windows = as_strided(img,(int((A.shape[0] - xsize + 1) / xstep), int((A.shape[1] - ysize + 1) / ystep),
-                          # xsize, ysize),(A.strides[0] * xstep, A.strides[1] * ystep, A.strides[0], A.strides[1]))
-
-#cv2.imshow('d',img)
 
